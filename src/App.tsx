@@ -1,16 +1,22 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
-
+import GlobalStyle from "./styles/GlobalStyles";
 
 function App() {
   return (
     <BrowserRouter>
+      <GlobalStyle />
       <div id="App">
         <Routes>
-          <Route path="/" element={<Layout />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<></>} />
+            <Route path="/register" element={<></>} />
+            <Route path="/todoList" element={<></>} />
+          </Route>
         </Routes>
-        </div>
-    </BrowserRouter>);
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
