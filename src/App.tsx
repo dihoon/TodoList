@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
+import Home from "./pages/Login/Login";
 import GlobalStyle from "./styles/GlobalStyles";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <div id="App">
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/" element={<></>} />
+            <Route path="/" element={<Home />} />
             <Route path="/register" element={<></>} />
             <Route path="/todoList" element={<></>} />
           </Route>
