@@ -6,4 +6,9 @@ export const StyledButton = styled.button`
   font-size: 20px;
   background-color: #8EC3B0;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #9ED5C5;
+  }
 `;
