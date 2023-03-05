@@ -10,5 +10,5 @@ export const StyledList = styled.li`
   display: flex;
   width: auto;
   height: auto;
-  margin-bottom: 10%;
+  margin: 10% 0;
 `

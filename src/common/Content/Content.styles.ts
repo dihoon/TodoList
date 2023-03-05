@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 30%;
   min-width: 10%;
   min-height: 400px;
-  padding-top: 5%;
+  padding: 5% 0;
 `
 
 export const Title = styled.div`
