@@ -44,5 +44,6 @@ module.exports = {
       // 브라우저에서 로그 설정
       logging: "none", // 로그 출력 x
     },
+    historyApiFallback: true, // 새로고침 문제 해결
   },
 };

@@ -8,7 +8,8 @@ export const Container = styled.div`
   height: 50%;
   width: 30%;
   min-width: 10%;
-  padding-top: 30px;
+  min-height: 400px;
+  padding-top: 5%;
 `
 
 export const Title = styled.div`

@@ -7,7 +7,7 @@ interface Props {
 
 export const Input = styled.input<Props>`
   font-size: 20px;
-  height: 40px;
+  height: auto;
   border: none;
   padding: 5px;
   width: 100%;
