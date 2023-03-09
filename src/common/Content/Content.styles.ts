@@ -7,9 +7,10 @@ export const Container = styled.div`
   background-color: #BCEAD5;
   height: 50%;
   width: 30%;
-  min-width: 10%;
+  min-width: 400px;
   min-height: 400px;
   padding: 5% 0;
+  position: relative;
 `
 
 export const Title = styled.div`

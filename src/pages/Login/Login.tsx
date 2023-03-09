@@ -1,7 +1,7 @@
 import { LoginContainer } from "./Login.styles";
 import { Content } from "../../common/Content/Content";
 import { List, ListItem } from "../../common/List/List";
-import { TextInput } from "../../common/TextInput/TextInput";
+import { TextInput } from "../../components/TextInput/TextInput";
 import { PasswordInput } from "../../common/PasswordInput/PasswordInput";
 import { Button } from "../../common/Button/Button";
 import { Form } from "../../common/Form/Form";
