@@ -1,24 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 import { useRouter } from "../hooks/useRouter";
-import { routerData } from "../router";
+import { routerData, RouterElement } from "../router";
 import theme from "../styles/theme";
 
 export const Header = () => {
   const { currentPath, routeTo } = useRouter();
 
-  const menuClickHandler = (path : string) => {
+  const menuClickHandler = (path: string) => {
+    if (path === "/" && !!localStorage.getItem("token")) {
+      localStorage.removeItem("token");
+    }
     routeTo(path);
-  }
+  };
 
-  return <Container><Menu>{
-    routerData.map(element => {
-      if (element.withAuth){
-        return;
-      }
-      return <div onClick={()=> menuClickHandler(element.path)}>{element.label}</div>
-    })
-    }</Menu></Container>;
+  const headerNav : RouterElement[] = routerData.reduce((result, router) => {
+    const isLogin = !!localStorage.getItem("token");
+    if (!router.withAuth === isLogin) return result;
+    return [...result, router];
+  }, [] as RouterElement[]);
+
+  return (
+    <Container>
+      <Menu>
+        {headerNav.map((element) => {
+          return (
+            <div
+              key={element.id}
+              onClick={() => menuClickHandler(element.path)}
+            >
+              {element.label}
+            </div>
+          );
+        })}
+      </Menu>
+    </Container>
+  );
 };
 
 const Container = styled.div`
@@ -31,13 +48,13 @@ const Container = styled.div`
 
 const Menu = styled.div`
   display: flex;
-  
+
   & > div {
     margin-right: 10px;
-    
+
     &:hover {
       cursor: pointer;
     }
   }
   width: fit-content;
-`
+`;

@@ -5,7 +5,7 @@ import { Layout } from "./layout/Layout";
 import { TodoList } from "./pages/TodoList";
 import { Register } from "./pages/Register";
 
-interface RouterElement {
+export interface RouterElement {
   id: number; // 페이지 아이디
   path: string; // 페이지 경로
   label: string; // 헤더에 표시할 메뉴 이름
@@ -23,9 +23,9 @@ export const routerData: RouterElement[] = [
   },
   {
     id: 1,
-    path: "/todolist",
-    label: "Todo 리스트",
-    element: <TodoList />,
+    path: "/",
+    label: "로그아웃",
+    element: <Home />,
     withAuth: true,
   },
   {

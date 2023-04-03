@@ -1,24 +1,36 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 import styled from "styled-components";
+import handleLogin from "../api/handleLogin";
 import { Content } from "../components/Content";
 import theme from "../styles/theme";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   if (!localStorage.getItem("token")) {
     return (
-    <Content>
-      <Title>로그인</Title>
-      <Input placeholder="아이디"/>
-      <Input type="password" placeholder="비밀번호"/>
-      <Button>로그인</Button>
-    </Content>);
+      <Content>
+        <Form
+          onSubmit={async (e) => {
+            await handleLogin(e);
+            navigate("/");
+          }}
+        >
+          <Title>로그인</Title>
+          <Input name="userId" placeholder="아이디" />
+          <Input name="password" type="password" placeholder="비밀번호" />
+          <Button type="submit">로그인</Button>
+        </Form>
+      </Content>
+    );
   }
-  return <div>Home</div>;
+  return <Content>sf</Content>;
 };
 
 const Title = styled.h1`
   font-size: 30px;
-`
+`;
 
 const Input = styled.input`
   font-size: 20px;
@@ -30,7 +42,7 @@ const Input = styled.input`
   &::placeholder {
     color: lightgray;
   }
-`
+`;
 
 const Button = styled.button`
   display: flex;
@@ -45,4 +57,11 @@ const Button = styled.button`
     background-color: ${theme.green3};
     cursor: pointer;
   }
-`
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
