@@ -1,9 +1,10 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import handleLogin from "../api/handleLogin";
 import { Content } from "../components/Content";
 import theme from "../styles/theme";
+import { TodoList } from "./TodoList";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export const Home = () => {
       </Content>
     );
   }
-  return <Content>sf</Content>;
+  return <TodoList />;
 };
 
 const Title = styled.h1`

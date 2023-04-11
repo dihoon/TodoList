@@ -18,12 +18,14 @@ const Container = styled.div`
   background-color: ${theme.green2};
   overflow: hidden;
   padding: 50px 0;
+  position: relative;
 
   @media (max-width: 500px) {
     width: 100%;
   }
 
-  @media (max-height: 500px) {
+  @media (max-height: 600px) {
     height: 100%;
   }
+
 `;

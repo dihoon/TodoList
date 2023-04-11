@@ -1,5 +1,4 @@
 import { FormEvent } from "react";
-import { useRouter } from "../hooks/useRouter";
 import axiosInstance from "./axiosInstance";
 
 const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
