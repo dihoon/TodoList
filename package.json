@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite && set NODE_ENV=development",
+    "build": "tsc && vite build --base=./",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
@@ -30,5 +30,6 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "homepage": "https://dihoon.github.io/TodoList/"
 }
