@@ -2,7 +2,6 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Layout } from "./layout/Layout";
-import { TodoList } from "./pages/TodoList";
 import { Register } from "./pages/Register";
 
 export interface RouterElement {
