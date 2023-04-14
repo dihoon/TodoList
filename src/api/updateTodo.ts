@@ -1,5 +1,4 @@
 import axiosInstance from "./axiosInstance";
-import React from 'react'
 
 interface Update {
   check?: boolean;
@@ -8,5 +7,10 @@ interface Update {
 
 export const updateTodo = async (id: number, update: Update) => {
   const todoId = id;
-  axiosInstance.patch(`todolist/${todoId}`, update);
+  const token = localStorage.getItem("token");
+  axiosInstance.patch(`todolist/${todoId}`, update, {
+    headers: {
+      Authorization: `${token}`,
+    }
+  });
 }

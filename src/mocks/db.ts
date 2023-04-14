@@ -1,22 +1,33 @@
-import { Todo } from "../pages/TodoList";
+interface Todo {
+  id: number;
+  value: string;
+  check: boolean;
+}
 
-export const userDb = {
+interface Object {
+  [key: string]: string | Todo[];
+}
+
+const userDb : Object = {
   userId: "1234",
 };
 
-export const todoDb : Todo[] = [
-  {
-    id: 0,
-    check: true,
-    value: "공부하기",
-  },
-  {
-    id: 1,
-    check: false,
-    value: "운동하기",
-  }
-];
+const todoDb : Object = {
+  userId: [
+    {
+      id: 0,
+      value: "샘플1",
+      check: true,
+    },
+    {
+      id: 1,
+      value: "샘플2",
+      check: false,
+    }
+  ],
+};
 
 export const db = {
-  userDb, todoDb
-}
+  userDb,
+  todoDb,
+};
