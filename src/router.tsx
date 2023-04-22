@@ -43,4 +43,6 @@ export const router = createBrowserRouter(
       element: <Layout>{router.element}</Layout>,
     };
   })
-);
+,{
+  basename: process.env.NODE_ENV === "production" ? "/TodoList" : "/"
+});
